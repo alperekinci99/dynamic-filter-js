@@ -2,18 +2,18 @@ $('#show-more-filter .btn').on("click", function () {
     $('.more-filter').removeClass('d-none');
     $(".home-filter-area .filter-content-area .filter-item").not(".first-items").css("width", "25%");
 });
-$(document).ready(function () {
-    $("#searchButton").click(function () {
-        $('.more-filter').addClass('d-none');
-        $(".home-filter-area .filter-content-area .filter-item").not(".first-items").css("width", "33.33%");
-    });
+
+$("#searchButton").click(function () {
+    $('.more-filter').addClass('d-none');
+    $(".home-filter-area .filter-content-area .filter-item").not(".first-items").css("width", "33.33%");
 });
-$(document).ready(function () {
-    $("#searchButton").click(function () {
-        $('.more-filter').addClass('d-none');
-        $(".home-filter-area .filter-content-area .filter-item").not(".first-items").css("width", "33.33%");
-    });
+
+
+$("#searchButton").click(function () {
+    $('.more-filter').addClass('d-none');
+    $(".home-filter-area .filter-content-area .filter-item").not(".first-items").css("width", "33.33%");
 });
+
 $('.action-item .btn').on("click", function () {
     var t = $(this).addClass("active"),
         n;
@@ -29,7 +29,7 @@ $("body").on("click", ".filter-content-area .filter-item", function () {
 });
 $(document).on("click", function (n) {
     $(".filter-content-area .filter-item").is(n.target) || $(".filter-content-area .filter-item").has(n.target).length || $(".item-dropdown").is(n
-        .target) ||
+            .target) ||
         $(".item-dropdown").has(n.target).length || ($(".item-dropdown").hide(), $(".filter-content-area .filter-item")
             .removeClass(
                 "active"))
@@ -48,42 +48,40 @@ $("body").on("click", ".number-item-max .item-content-area .content-item", funct
     e.stopPropagation();
 });
 
-$(document).ready(function () {
-    $(".number-item .item-content-area .content-item").click(function () {
-        var id = $(this).data("id");
-        var value = $(this).data("value");
-        $(`#${id}`).text(value);
-        if (value.length < 1) {
-            $(`#${id}`).text("");
-        }
-    });
-});
-$(document).ready(function () {
-    $(".number-item input").change(function () {
-        var id = $(this).data("id");
-        var value = $(this).val();
-        $(`#${id}`).text(value);
-        if (value.length > 1) {
-            $(".number-item-min .item-content-area .content-item").removeClass("active");
-            $(".number-item-max .item-content-area .content-item").removeClass("active");
-        }
 
-    });
+$(".number-item .item-content-area .content-item").click(function () {
+    var id = $(this).data("id");
+    var value = $(this).data("value");
+    $(`#${id}`).text(value);
+    if (value.length < 1) {
+        $(`#${id}`).text("");
+    }
 });
-$(document).ready(function () {
-    $(".check-item input, .check-item label").click(function (e) {
-        var headId = $(this).data("head-id");
-        var chkArray = [];
-        $(`#${headId} .check-item input:checked`).each(function () {
-            chkArray.push($(this).val());
-        });
-        var id = $(this).data("id");
-        var title = $(this).data("title");
-        var selected = chkArray.join(', ');
-        $(`#${id}`).text(selected);
-        if (selected.length < 1) {
-            $(`#${id}`).text(title);
-        }
-        e.stopPropagation();
+
+
+$(".number-item input").change(function () {
+    var id = $(this).data("id");
+    var value = $(this).val();
+    $(`#${id}`).text(value);
+    if (value.length > 1) {
+        $(".number-item-min .item-content-area .content-item").removeClass("active");
+        $(".number-item-max .item-content-area .content-item").removeClass("active");
+    }
+
+});
+
+$(".check-item input, .check-item label").click(function (e) {
+    var headId = $(this).data("head-id");
+    var chkArray = [];
+    $(`#${headId} .check-item input:checked`).each(function () {
+        chkArray.push($(this).val());
     });
+    var id = $(this).data("id");
+    var title = $(this).data("title");
+    var selected = chkArray.join(', ');
+    $(`#${id}`).text(selected);
+    if (selected.length < 1) {
+        $(`#${id}`).text(title);
+    }
+    e.stopPropagation();
 });
