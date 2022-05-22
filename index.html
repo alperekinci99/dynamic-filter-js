@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Filter Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section class="home-filter-area">
+        <div class="container">
+            <form action="" id="filters">
+                <div class="filter-action-area">
+                    <div class="action-item" id="searchButton">
+                        <button type="button" class="btn search-btn active">Filtrele</button>
+                    </div>
+                    <div class="action-item" id="show-more-filter">
+                        <button type="button" class="btn advanced-btn">Gelişmiş</button>
+                    </div>
+                </div>
+                <div class="filter-content-area desc-filter-area">
+                    <div class="filter-item first-items">
+                        <div class="item-head">
+                            <div class="filter-title">
+                                <span><i class="fas fa-tag"></i>&nbsp;Fiyat Aralığı</span>
+                            </div>
+                            <div class="title-box-area">
+                                <div class="title-box min-box" id="min-box">
+                                    <span></span>
+                                </div>
+                                <div class="title-box max-box" id="max-box">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="filter-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-dropdown" style="display: none;">
+                            <div class="dropdown-content price-dropdown">
+                                <div class="check-item number-item number-item-min">
+                                    <span class="area-head">Min:</span>
+                                    <input type="text" name="" class="form-control min-box-input" data-id="min-box">
+                                    <div class="item-content-area">
+                                        <span class="content-item" data-id="min-box" data-value="0">
+                                            0
+                                        </span>
+                                        <span class="content-item" data-id="min-box" data-value="200,000">
+                                            200,000
+                                        </span>
+                                        <span class="content-item" data-id="min-box" data-value="225,000">
+                                            225,000
+                                        </span>
+                                        <span class="content-item" data-id="min-box" data-value="250,000">
+                                            250,000
+                                        </span>
+                                        <span class="content-item" data-id="min-box" data-value="275,000">
+                                            275,000
+                                        </span>
+                                        <span class="content-item" data-id="min-box" data-value="300,000">
+                                            300,000
+                                        </span>
+                                        <span class="content-item" data-id="min-box" data-value="325,000">
+                                            325,000
+                                        </span>
+                                        <span class="content-item" data-id="min-box" data-value="350,000">
+                                            350,000
+                                        </span>
+                                        <span class="content-item" data-id="min-box" data-value="400,000">
+                                            400,000
+                                        </span>
+                                        <span class="content-item" data-id="min-box" data-value="450,000">
+                                            450,000
+                                        </span>
+                                        <span class="content-item" data-id="min-box" data-value="500,000">
+                                            500,000
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="check-item number-item number-item-max">
+                                    <span class="area-head">Max:</span>
+                                    <input type="text" name="" class="form-control max-box-input" data-id="max-box">
+                                    <div class="item-content-area">
+                                        <span class="content-item" data-id="max-box" data-value="Any">
+                                            Any
+                                        </span>
+                                        <span class="content-item" data-id="max-box" data-value="400,000">
+                                            400,000
+                                        </span>
+                                        <span class="content-item" data-id="max-box" data-value="450,000">
+                                            450,000
+                                        </span>
+                                        <span class="content-item" data-id="max-box" data-value="500,000">
+                                            500,000
+                                        </span>
+                                        <span class="content-item" data-id="max-box" data-value="550,000">
+                                            550,000
+                                        </span>
+                                        <span class="content-item" data-id="max-box" data-value="600,000">
+                                            600,000
+                                        </span>
+                                        <span class="content-item" data-id="max-box" data-value="650,000">
+                                            650,000
+                                        </span>
+                                        <span class="content-item" data-id="max-box" data-value="700,000">
+                                            700,000
+                                        </span>
+                                        <span class="content-item" data-id="max-box" data-value="800,000">
+                                            800,000
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-item first-items" id="filterProperty">
+                        <div class="item-head">
+                            <div class="filter-title">
+                                <span id="propertyType">Emlak Tipi</span>
+                            </div>
+                            <div class="filter-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-dropdown" style="display: none;">
+                            <div class="dropdown-content">
+                                <div class="check-item check-item-property">
+                                    <input class="form-check-input" type="checkbox" name="Premium" value="Premium"
+                                        data-id="propertyType" id="Premium" data-title="Emlak Tipi"
+                                        data-head-id="filterProperty">
+                                    <label data-id="propertyType" class="form-check-label" for="Premium">
+                                        Premium
+                                    </label>
+                                </div>
+                                <div class="check-item check-item-property">
+                                    <input class="form-check-input" type="checkbox" name="loremIpsum" value="Lorem Ipsum"
+                                        data-id="propertyType" id="loremIpsum" data-title="Emlak Tipi"
+                                        data-head-id="filterProperty">
+                                    <label data-id="propertyType" class="form-check-label" for="loremIpsum">
+                                        Lorem Ipsum
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-item" id="filterLocation">
+                        <div class="item-head">
+                            <div class="filter-title">
+                                <span id="location">Location</span>
+                            </div>
+                            <div class="filter-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-dropdown" style="display: none;">
+                            <div class="dropdown-content">
+                                <div class="check-item">
+                                    <input class="form-check-input" type="checkbox" name="istanbul" value="İstanbul"
+                                        data-id="location" id="istanbul" data-title="Location"
+                                        data-head-id="filterLocation">
+                                    <label data-id="location" class="form-check-label" for="istanbul">
+                                        İstanbul
+                                    </label>
+                                </div>
+                                <div class="check-item">
+                                    <input class="form-check-input" type="checkbox" name="fethiye" value="Fethiye"
+                                        data-id="location" id="fethiye" data-title="Location" data-head-id="filterLocation">
+                                    <label data-id="location" class="form-check-label" for="fethiye">
+                                        Fethiye
+                                    </label>
+                                </div>
+                                <div class="check-item">
+                                    <input class="form-check-input" type="checkbox" name="dubai" value="Dubai"
+                                        data-id="location" id="dubai" data-title="Location" data-head-id="filterLocation">
+                                    <label data-id="location" class="form-check-label" for="dubai">
+                                        Dubai
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-item" id="filterBeds">
+                        <div class="item-head">
+                            <div class="filter-title">
+                                <span id="beds">Beds</span>
+                            </div>
+                            <div class="filter-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-dropdown" style="display: none;">
+                            <div class="dropdown-content">
+                                <div class="check-item">
+                                    <input class="form-check-input" type="checkbox" name="all" value="All" data-id="beds"
+                                        id="all" data-title="Beds" data-head-id="filterBeds">
+                                    <label data-id="beds" class="form-check-label" for="all">
+                                        All
+                                    </label>
+                                </div>
+                                <div class="check-item">
+                                    <input class="form-check-input" type="checkbox" name="studio" value="Studio"
+                                        data-id="beds" id="studio" data-title="Beds" data-head-id="filterBeds">
+                                    <label data-id="beds" class="form-check-label" for="studio">
+                                        Studio
+                                    </label>
+                                </div>
+                                <div class="check-item">
+                                    <input class="form-check-input" type="checkbox" name="1bedroom" value="1 Bedroom"
+                                        data-id="beds" id="1bedroom" data-title="Beds" data-head-id="filterBeds">
+                                    <label data-id="beds" class="form-check-label" for="1bedroom">
+                                        1 Bedroom
+                                    </label>
+                                </div>
+                                <div class="check-item">
+                                    <input class="form-check-input" type="checkbox" name="2bedrooms" value="2 Bedrooms"
+                                        data-id="beds" id="2bedrooms" data-title="Beds" data-head-id="filterBeds">
+                                    <label data-id="beds" class="form-check-label" for="2bedrooms">
+                                        2 Bedrooms
+                                    </label>
+                                </div>
+                                <div class="check-item">
+                                    <input class="form-check-input" type="checkbox" name="3bedrooms" value="3 Bedrooms"
+                                        data-id="beds" id="3bedrooms" data-title="Beds" data-head-id="filterBeds">
+                                    <label data-id="beds" class="form-check-label" for="3bedrooms">
+                                        3 Bedrooms
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-item more-filter d-none" id="filterArea">
+                        <div class="item-head">
+                            <div class="filter-title">
+                                <span id="area">Area</span>
+                            </div>
+                            <div class="filter-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-dropdown" style="display: none;">
+                            <div class="dropdown-content">
+                                <div class="check-item check-item-property">
+                                    <input class="form-check-input" type="checkbox" name="filterArea" value="0-100 SQM"
+                                        data-id="area" id="zeroBetweenOneHundred" data-title="Area"
+                                        data-head-id="filterArea">
+                                    <label data-id="area" class="form-check-label" for="zeroBetweenOneHundred">
+                                        0-100 SQM
+                                    </label>
+                                </div>
+                                <div class="check-item check-item-property">
+                                    <input class="form-check-input" type="checkbox" name="filterArea" value="100-200 SQM"
+                                        data-id="area" id="oneHundredBetweenTwoHundred" data-title="Area"
+                                        data-head-id="filterArea">
+                                    <label data-id="area" class="form-check-label" for="oneHundredBetweenTwoHundred">
+                                        100-200 SQM
+                                    </label>
+                                </div>
+                                <div class="check-item check-item-property">
+                                    <input class="form-check-input" type="checkbox" name="filterArea" value="200-300 SQM"
+                                        data-id="area" id="twoHundredBetweenThreeHundred" data-title="Area"
+                                        data-head-id="filterArea">
+                                    <label data-id="area" class="form-check-label" for="twoHundredBetweenThreeHundred">
+                                        200-300 SQM
+                                    </label>
+                                </div>
+                                <div class="check-item check-item-property">
+                                    <input class="form-check-input" type="checkbox" name="filterArea" value="300-400 SQM"
+                                        data-id="area" id="threeHundredBetweenFourHundred" data-title="Area"
+                                        data-head-id="filterArea">
+                                    <label data-id="area" class="form-check-label" for="threeHundredBetweenFourHundred">
+                                        300-400 SQM
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-action-area mb-0 mt-5">
+                    <div class="action-item" id="searchAction">
+                        <button type="button" class="btn action-search">Listele&nbsp;<i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"
+        integrity="sha512-Tn2m0TIpgVyTzzvmxLNuqbSJH3JP8jm+Cy3hvHrW7ndTDcJ1w5mBiksqDBb8GpE2ksktFvDB/ykZ0mDpsZj20w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
